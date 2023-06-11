@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 class MapContainer extends Component {
   componentDidMount() {
-    // Google 지도 API를 비동기로 로드
     const script = document.createElement("script");
     //https://maps.googleapis.com/maps/api/js?key=본인이 발급 받은 키
     script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBAl04sqw3RbxgFsN7gGnsA7BaCaZz5Ong`;
@@ -10,23 +9,17 @@ class MapContainer extends Component {
     script.defer = true;
     document.head.appendChild(script);
 
-    // API 로드, 콜백 함수 실행
     script.onload = () => {
       this.initMap();
     };
   }
-
-  //여기부터 gps 기능 및 각 위치에 대한 마커 설정 등의 기능 추가
-
   initMap() {
-    // 내 현재 위도 경도 가져오기
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
           const center = { lat: latitude, lng: longitude };
 
-          // 지도 초기화 및 설정
           const map = new window.google.maps.Map(
             document.getElementById("map"),
             {
@@ -35,25 +28,20 @@ class MapContainer extends Component {
             }
           );
 
-          // 내 위치 마커
           const userMarker = new window.google.maps.Marker({
             position: center,
             map,
-            // 구글에서 주는 아이콘만 사용 가능, 이유는 몰라 그렇대
             icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
           });
 
-          // 내 위치 실시간 추적
           navigator.geolocation.watchPosition(
             (position) => {
               const { latitude, longitude } = position.coords;
               const updatedCenter = { lat: latitude, lng: longitude };
               console.log(updatedCenter);
 
-              // 지도 중심 위치 업데이트
               map.setCenter(updatedCenter);
 
-              // 내 위치 마커 업데이트
               userMarker.setPosition(updatedCenter);
             },
             (error) => {
@@ -61,7 +49,6 @@ class MapContainer extends Component {
             }
           );
 
-          // 마커들의 위치 정보
           const markerPositions = [
             { lat: 36.83926030795387, lng: 127.18603149699244 }, // 본부동 36.83926030795387, 127.18603149699244
             { lat: 36.84018929608955, lng: 127.18463587488411 }, // 진리관 36.84018929608955, 127.18463587488411
@@ -87,7 +74,6 @@ class MapContainer extends Component {
             { lat: 36.83773921789712, lng: 127.18407698735162 }, // 학술정보관 36.83773921789712, 127.18407698735162
           ];
 
-          //위에 각 마커에 대한 내용
           const markerInfo = [
             "본부동 | 편의점 · 열람실 · 프린트 · atm",
             "진리관 | 편의점 · 여성회복실 · 서점 · 은행 · 우체국 · 안경원 · 프린트 · 보건실",
@@ -113,22 +99,16 @@ class MapContainer extends Component {
             "학술정보관 | 도서관",
           ];
 
-          // 정보 창 생성
           const infoWindow = new window.google.maps.InfoWindow();
 
-          // 각 위치에 대해 마커 생성
           markerPositions.forEach((position, index) => {
             const marker = new window.google.maps.Marker({
               position: position,
               map: map,
             });
 
-            // 마커 클릭 이벤트 리스너 등록
             marker.addListener("click", () => {
-              // 정보 창에 표시할 내용 설정
               infoWindow.setContent(markerInfo[index]);
-
-              // 정보 창을 클릭한 마커 근처에 표시
               infoWindow.open(map, marker);
             });
           });
@@ -143,7 +123,6 @@ class MapContainer extends Component {
   }
 
   render() {
-    // 구글 맵 크기
     return <div id="map" style={{ height: "570px" }}></div>;
   }
 }

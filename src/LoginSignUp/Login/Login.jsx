@@ -58,12 +58,6 @@ const LoginPage = () => {
   return (
     <>
       <SignUp onCreate={handleCreate} />
-      {/* <div>
-        <span>
-          자식 컴포넌트에서 보낸 데이터 부모 컴포넌트로 받아온 배열:{" "}
-          {JSON.stringify(memberInfo)}
-        </span>
-      </div> */}
       <div className="login-container__form login-container--signin">
         <form className="form" id="form2" onSubmit={handleSubmit}>
           <h2 className="form__title">Login</h2>
@@ -85,7 +79,6 @@ const LoginPage = () => {
           <button className="btn" type="submit" onSubmit={handleSubmit}>
             Login
           </button>
-          {/* <span>로그인 성공 여부 : {loginSuccess}</span> */}
         </form>
       </div>
     </>

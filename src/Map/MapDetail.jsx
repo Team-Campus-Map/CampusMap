@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import MapDetailComponent from "./MapDetailComponent";
+import React from "react";
 import MapDetailButton from "./MapDetailButton";
-const MapDetail = ({ buttonClick }) => {
-  const [showDetailHeader, setShowDetailHeader] = useState(false);
+const MapDetail = () => {
 
   return (
     <>
@@ -12,8 +10,6 @@ const MapDetail = ({ buttonClick }) => {
           <div className="map-detail-Container-body-button">
             <MapDetailButton />
           </div>
-          {/* <MapDetailComponent {...detailheader.cardHeader1} />
-          <MapDetailComponent {...detailbody.card1} /> */}
         </div>
       </div>
     </>

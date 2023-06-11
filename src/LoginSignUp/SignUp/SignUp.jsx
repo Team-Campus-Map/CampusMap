@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "../../CSS/login.css";
 import Swal from "sweetalert2";
 const SignUp = ({ onCreate }) => {
@@ -47,7 +47,6 @@ const SignUp = ({ onCreate }) => {
         }
       }
     } else {
-      // console.log(`email error`);
       Swal.fire("회원가입 실패!", "이메일형식을 확인하세요.", "warning");
     }
 
@@ -56,9 +55,6 @@ const SignUp = ({ onCreate }) => {
     setpassword("");
     setPasswordCheck("");
     setPhonenumber("");
-    // const loginResult = {
-    //   success: true,
-    // };
   };
   return (
     <>

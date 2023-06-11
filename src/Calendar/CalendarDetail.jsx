@@ -11,7 +11,6 @@ const CalendarDetail = ({
   onCheckBox,
   selectedDate,
 }) => {
-  // 선택된 날짜에 해당하는 이벤트만 필터링
   const filteredEvents = events.filter(
     (event) =>
       new Date(event.date).toDateString() === selectedDate.toDateString()
@@ -63,7 +62,7 @@ const CalendarDetail = ({
               className="remove-button"
               onClick={() => onRemoveEvent(index)}
             >
-              <FontAwesomeIcon icon={faTrashCan} olor="#BDBDBD" />
+              <FontAwesomeIcon icon={faTrashCan} color="#BDBDBD" />
               &nbsp;삭제
             </button>
             <div

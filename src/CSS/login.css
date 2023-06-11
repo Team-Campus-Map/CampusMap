@@ -95,7 +95,7 @@
 
 .overlay {
   background-color: var(--lightgreen);
-  background: url(/public/img/banner.jpg);
+  background: url(/public/img/loginbanner.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
