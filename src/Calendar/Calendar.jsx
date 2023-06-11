@@ -7,7 +7,6 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import Header from "../Header/Header";
 import CalendarDetail from "./CalendarDetail";
-import Footer from "../Footer/Footer";
 
 const Calendar = () => {
   const [date, setDate] = useState(new Date());
