@@ -1,0 +1,30 @@
+.headerBody {
+  align-items: center;
+}
+.headerlink {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  line-height: 100px;
+  text-decoration: none;
+  display: inline;
+}
+.title {
+  display: inline-block;
+  font-size: 0.95rem;
+  margin: 1rem 10rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+  text-decoration: none;
+  font-family: "SBAggroB";
+  color: rgb(88, 136, 92);
+  padding: 0.7rem 0;
+  height: 2rem;
+}
+
+.title:hover {
+  cursor: pointer;
+  font-weight: 900;
+  text-shadow: 0px 0px 10px rgb(88, 136, 92);
+}
