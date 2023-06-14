@@ -163,7 +163,7 @@ body.open .menuGroup {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 100px;
+  margin-right: 20px;
 }
 .menuGroup .menulink a {
   position: relative;

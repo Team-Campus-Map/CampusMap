@@ -35,23 +35,24 @@
 }
 
 .timetable-table {
-  width: 67%;
-  height: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-  background: white;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.125em;
-  border: 3px solid #ffffff;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  margin: 0 2% 0 0;
-  padding: 47px 10px;
-  opacity: 0.9;
+  width: 60%;
+    height: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    border: 3px solid #ffffff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 0 2% 0 0;
+    padding: 47px 10px;
+    opacity: 0.9;
 }
 .timetable-table table {
   width: 1000px;
-  table-layout: fixed;
+    table-layout: fixed;
+    margin: 0 auto;
 }
 .timetable-table td {
   width: 8%;
@@ -67,12 +68,12 @@
 }
 .timetable-select {
   width: 360px;
-  height: 395px;
-  margin-bottom: 20px;
-  background-color: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin-bottom: 0.2rem;
+    height: 350px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 0.2rem;
 }
 .timetable-select h3 {
   text-align: center;
